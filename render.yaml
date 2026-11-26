@@ -1,0 +1,15 @@
+services:
+
+  - type: web
+
+    name: ukrainian-erudit
+
+    runtime: python
+
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+
+    startCommand: gunicorn app:app
+
+    healthCheckPath: /health
